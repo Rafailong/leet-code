@@ -6,11 +6,23 @@ fn main() {
     // let k = remove_duplicates(&mut nums);
 
     // https://leetcode.com/problems/remove-element/
-    let mut nums = [3, 2, 2, 3].to_vec();
-    let val = 3;
-    let k = remove_elements(&mut nums, val);
-    println!("k = {}", k);
-    println!("nums after removal: {:?}", nums);
+    // let mut nums = [3, 2, 2, 3].to_vec();
+    // let val = 3;
+    // let k = remove_elements(&mut nums, val);
+    // println!("k = {}", k);
+    // println!("nums after removal: {:?}", nums);
+
+    // https://leetcode.com/problems/implement-strstr/
+    let haystack = String::from("hello");
+    let needle = String::from("ll");
+    assert_eq!(str_str(haystack, needle), 2);
+}
+
+// https://leetcode.com/problems/implement-strstr/
+pub fn str_str(haystack: String, needle: String) -> i32 {
+    haystack.find(needle.as_str())
+        .map(|uz| uz as i32)
+        .unwrap_or(-1)
 }
 
 // https://leetcode.com/problems/remove-element/
