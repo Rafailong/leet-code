@@ -2,10 +2,10 @@ import scala.annotation.tailrec
 
 object ValidParentheses {
 
-  def isOpeningBracket(char: Char): Boolean = "{[(".contains(char)
+  private def isOpeningBracket(char: Char): Boolean = "{[(".contains(char)
 
   @tailrec
-  def go(string: String, stack: List[Char], flag: Boolean): Boolean = {
+  private def go(string: String, stack: List[Char], flag: Boolean): Boolean = {
 
     if (string.isEmpty) flag && stack.isEmpty
     else {
@@ -31,11 +31,4 @@ object ValidParentheses {
   }
 
   def isValid(s: String): Boolean = go(s, List.empty[Char], flag = true)
-
-  def main(args: Array[String]): Unit = {
-    List("()", "([)]", "{[]}", "()[]{}", "(]", "(").foreach { testCase =>
-      val result = isValid(testCase)
-      println(s"Is the '$testCase' valid? $result")
-    }
-  }
 }

@@ -1,6 +1,6 @@
 object RomanToInteger {
 
-  val symbols = Map(
+  private val symbols = Map(
     'I' -> 1,
     'V' -> 5,
     'X' -> 10,
@@ -10,7 +10,7 @@ object RomanToInteger {
     'M' -> 1000
   )
 
-  val specials = Map(
+  private val specials = Map(
     "IV" -> 4,
     "IX" -> 9,
     "XL" -> 40,
@@ -52,14 +52,5 @@ object RomanToInteger {
     }
 
     sum
-  }
-
-  def main(args: Array[String]): Unit = {
-
-    assert(romanToInt("III") == 3)
-    assert(romanToInt("IV") == 4)
-    assert(romanToInt("IX") == 9)
-    assert(romanToInt("LVIII") == 58)
-    assert(romanToInt("MCMXCIV") == 1994)
   }
 }

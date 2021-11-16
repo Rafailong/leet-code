@@ -23,16 +23,4 @@ object PalindromeNumber {
       arr.sameElements(arr1)
     }
   }
-
-  def main(args: Array[String]): Unit = {
-    assert(isPalindromeBruteForce(121))
-    assert(!isPalindromeBruteForce(-121))
-    assert(!isPalindromeBruteForce(10))
-    assert(!isPalindromeBruteForce(-101))
-
-    assert(isPalindrome(121))
-    assert(!isPalindrome(-121))
-    assert(!isPalindrome(10))
-    assert(!isPalindrome(-101))
-  }
 }
