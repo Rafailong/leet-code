@@ -9,6 +9,8 @@ lazy val root = (project in file("."))
   )
 
 libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test
+libraryDependencies += "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test
+libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.15.4" % Test
 libraryDependencies += "org.typelevel" %% "cats-core" % "2.3.0"
 
 testFrameworks += new TestFramework("munit.Framework")
