@@ -10,9 +10,9 @@ object AddTwoNumbers {
   object ListNode {
 
     @tailrec
-    private def toList(ln: ListNode, acc: List[Int]): List[Int] = {
+    final def toList(ln: ListNode, acc: List[Int]): List[Int] = {
       if (ln == null) acc
-      else toList(ln.next, ln.x :: acc)
+      else toList(ln.next, acc :+  ln.x)
     }
 
     def reverse(listNode: ListNode): ListNode = {
@@ -55,7 +55,7 @@ object AddTwoNumbers {
           )
         case (null, _) =>
           val (nr, b) = helper(bs.x + r)
-          val nAcc = new ListNode(b, acc.next)
+          val nAcc = new ListNode(b, acc)
           loop(
             as = null,
             bs.next,
@@ -79,11 +79,13 @@ object AddTwoNumbers {
     val a = l1.x
     val b = l2.x
     val (r, c) = helper(a + b)
-    loop(
-      l1.next,
-      l2.next,
-      acc = new ListNode(c),
-      r
+    ListNode.reverse(
+      loop(
+        l1.next,
+        l2.next,
+        acc = new ListNode(c),
+        r
+      )
     )
   }
 
